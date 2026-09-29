@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import BooksScreen from './screens/BooksScreen';
+import QuizScreen from './screens/QuizScreen';
+import ReaderScreen from './screens/ReaderScreen';
+import WordsScreen from './screens/WordsScreen';
+
+const Tab = createBottomTabNavigator();
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen
+            name="Books"
+            component={BooksScreen}
+            options={{ title: 'Kitaplar', tabBarLabel: 'Kitaplar' }}
+          />
+          <Tab.Screen
+            name="Reader"
+            component={ReaderScreen}
+            options={{ title: 'Okuyucu', tabBarLabel: 'Okuyucu' }}
+          />
+          <Tab.Screen
+            name="Words"
+            component={WordsScreen}
+            options={{ title: 'Kelimelerim', tabBarLabel: 'Kelimelerim' }}
+          />
+          <Tab.Screen
+            name="Quiz"
+            component={QuizScreen}
+            options={{ title: 'Test', tabBarLabel: 'Test' }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
