@@ -21,15 +21,15 @@ Kullanıcı seviyesine uygun bir kitap seçer ve okur. Bilmediği kelimeye dokun
 
 ## Temel kararlar
 
-| Konu | MVP kararı | Neden |
-|---|---|---|
-| Platform | Önce Android | iOS yıllık 99 $'lık Apple hesabı istiyor. Kod ortak, sonra eklenir. |
-| Kitaplar | Uygulamaya gömülü 6–10 kısa, açık lisanslı metin | İndirme ve dosya yönetimi MVP'yi gereksiz büyütür. |
-| Seviye | Kitabın üstünde A1/A2/B1 etiketi, kullanıcı kendisi seçer | Otomatik seviye tespiti MVP sonrasına kaldı. |
-| Sözlük | Sadece bu kitaplardaki kelimeleri kapsayan, bilgisayarda bir scriptle üretilen JSON | Kök bulma gibi zor işler bilgisayarda bir kez yapılır, telefon sadece hazır tabloya bakar. |
-| Veri | Kelimeler `expo-sqlite`'ta, ayarlar ve okuma konumu AsyncStorage'da | Aranabilir ve ilişkili veri için veritabanı gerekiyor. |
-| Test | Leitner kutuları | Basit ve etkili bir aralıklı tekrar yöntemi. |
-| Ortam | Expo Go | MVP'de native kod gerektiren bir modül yok. |
+| Konu     | MVP kararı                                                                          | Neden                                                                                      |
+| -------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Platform | Önce Android                                                                        | iOS yıllık 99 $'lık Apple hesabı istiyor. Kod ortak, sonra eklenir.                        |
+| Kitaplar | Uygulamaya gömülü 6–10 kısa, açık lisanslı metin                                    | İndirme ve dosya yönetimi MVP'yi gereksiz büyütür.                                         |
+| Seviye   | Kitabın üstünde A1/A2/B1 etiketi, kullanıcı kendisi seçer                           | Otomatik seviye tespiti MVP sonrasına kaldı.                                               |
+| Sözlük   | Sadece bu kitaplardaki kelimeleri kapsayan, bilgisayarda bir scriptle üretilen JSON | Kök bulma gibi zor işler bilgisayarda bir kez yapılır, telefon sadece hazır tabloya bakar. |
+| Veri     | Kelimeler `expo-sqlite`'ta, ayarlar ve okuma konumu AsyncStorage'da                 | Aranabilir ve ilişkili veri için veritabanı gerekiyor.                                     |
+| Test     | Leitner kutuları                                                                    | Basit ve etkili bir aralıklı tekrar yöntemi.                                               |
+| Ortam    | Expo Go                                                                             | MVP'de native kod gerektiren bir modül yok.                                                |
 
 **Mimari not:** Çeviri tek bir `translate(word)` fonksiyonunun arkasında durur. Bugün yerel sözlüğe bakar; ileride bir AI servisine de sorabilir. API anahtarları **asla** uygulamanın içine konmaz (APK açılıp anahtar çalınabilir). Böyle bir özellik için araya küçük bir sunucu gerekir.
 
@@ -37,14 +37,14 @@ Kullanıcı seviyesine uygun bir kitap seçer ve okur. Bilmediği kelimeye dokun
 
 Her kitabın lisansı eklenmeden önce tek tek kontrol edilir.
 
-| Seviye | Kaynak | Lisans |
-|---|---|---|
-| A1–A2 | StoryWeaver seviyeli hikâyeler | CC BY 4.0 |
-| A1–A2 | Ezop masalları (Gutenberg) | Kamu malı |
-| B1 | Grimm ve Andersen masallarının eski İngilizce çevirileri (Gutenberg) | Kamu malı |
-| B1 | Simple English Wikipedia | CC BY-SA |
-| B2+ | Kısa öyküler: Sherlock Holmes, O. Henry (Gutenberg) | Kamu malı |
-| Sözlük | Wiktionary verisi (kaikki.org), ilk aday | CC BY-SA |
+| Seviye | Kaynak                                                               | Lisans    |
+| ------ | -------------------------------------------------------------------- | --------- |
+| A1–A2  | StoryWeaver seviyeli hikâyeler                                       | CC BY 4.0 |
+| A1–A2  | Ezop masalları (Gutenberg)                                           | Kamu malı |
+| B1     | Grimm ve Andersen masallarının eski İngilizce çevirileri (Gutenberg) | Kamu malı |
+| B1     | Simple English Wikipedia                                             | CC BY-SA  |
+| B2+    | Kısa öyküler: Sherlock Holmes, O. Henry (Gutenberg)                  | Kamu malı |
+| Sözlük | Wiktionary verisi (kaikki.org), ilk aday                             | CC BY-SA  |
 
 ## Fazlar
 
@@ -55,9 +55,9 @@ Her kitabın lisansı eklenmeden önce tek tek kontrol edilir.
 - [x] Expo Router'a geçiş, `src/app/` yapısı
 - [x] Okuyucuyu sekmeden çıkarıp `book/[id]` sayfasına taşı
 - [x] Kelimelerim ekranındaki kayıt hatasını düzelt
-- [ ] Telefonda Expo Go ile dene: 3 sekme açılıyor, örnek kitaba dokununca okuyucu açılıyor
+- [x] Telefonda Expo Go ile dene: 3 sekme açılıyor, örnek kitaba dokununca okuyucu açılıyor
 
-*Öğrenilenler:* dosya tabanlı yönlendirme, layout'lar, dinamik route.
+_Öğrenilenler:_ dosya tabanlı yönlendirme, layout'lar, dinamik route.
 
 ### Faz 1: Kütüphane ve okuyucu
 
@@ -68,8 +68,8 @@ Her kitabın lisansı eklenmeden önce tek tek kontrol edilir.
 - [ ] Dokunulan kelime vurgulanır ve alttan bir panel açılır
 - [ ] Son okunan yeri hatırla
 
-*Öğrenilecekler:* `FlatList`, metni kelimelere bölme (regex), dokunma olayları, stil.
-*Bitti sayılır:* kitap seçip okuyabiliyorum, dokunduğum kelime panelde görünüyor (çeviri henüz yok).
+_Öğrenilecekler:_ `FlatList`, metni kelimelere bölme (regex), dokunma olayları, stil.
+_Bitti sayılır:_ kitap seçip okuyabiliyorum, dokunduğum kelime panelde görünüyor (çeviri henüz yok).
 
 ### Faz 2: İnternetsiz sözlük
 
@@ -78,8 +78,8 @@ Her kitabın lisansı eklenmeden önce tek tek kontrol edilir.
 - [ ] Panelde anlam ve kelime türü göster, `expo-speech` ile telaffuz ekle
 - [ ] Hakkında ekranı: kitap ve sözlük kaynakları
 
-*Öğrenilecekler:* Node script yazma, veri işleme, lisanslar.
-*Bitti sayılır:* örnek kitaplardaki kelimelerin büyük çoğunluğu çevriliyor.
+_Öğrenilecekler:_ Node script yazma, veri işleme, lisanslar.
+_Bitti sayılır:_ örnek kitaplardaki kelimelerin büyük çoğunluğu çevriliyor.
 
 ### Faz 3: Kelimelerim
 
@@ -89,8 +89,8 @@ Her kitabın lisansı eklenmeden önce tek tek kontrol edilir.
 - [ ] Listede arama ve silme
 - [ ] AsyncStorage'daki geçici test listesini kaldır
 
-*Öğrenilecekler:* SQL, şema tasarımı, kendi hook'unu yazmak (`useWords`).
-*Bitti sayılır:* uygulamayı kapatıp açınca kelimeler duruyor.
+_Öğrenilecekler:_ SQL, şema tasarımı, kendi hook'unu yazmak (`useWords`).
+_Bitti sayılır:_ uygulamayı kapatıp açınca kelimeler duruyor.
 
 ### Faz 4: Test
 
@@ -99,7 +99,7 @@ Her kitabın lisansı eklenmeden önce tek tek kontrol edilir.
 - [ ] "Bugün X kelime tekrar edilecek" bilgisi
 - [ ] Kapalı test için 12 kişiyi toplamaya başla
 
-*Öğrenilecekler:* algoritma kurma, tarih hesapları, durum yönetimi.
+_Öğrenilecekler:_ algoritma kurma, tarih hesapları, durum yönetimi.
 
 ### Faz 5: Cila
 
@@ -116,7 +116,7 @@ Her kitabın lisansı eklenmeden önce tek tek kontrol edilir.
 - [ ] Kapalı test: en az 12 kişi, 14 gün
 - [ ] Herkese açık yayın
 
-*Öğrenilecekler:* build, imzalama, mağaza süreci.
+_Öğrenilecekler:_ build, imzalama, mağaza süreci.
 
 ## MVP sonrası (sırasız)
 
