@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function BooksScreen() {
+export default function QuizScreen() {
   return (
     <View style={styles.container}>
-      <Text>BookScreen ekranı</Text>
+      <Text>QuizScreen ekranı</Text>
     </View>
   );
 }
