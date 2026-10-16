@@ -61,7 +61,7 @@ _Öğrenilenler:_ dosya tabanlı yönlendirme, layout'lar, dinamik route.
 
 ### Faz 1: Kütüphane ve okuyucu
 
-- [ ] `Book` tipi: id, başlık, yazar, seviye, kaynak, lisans, paragraflara bölünmüş bölümler
+- [x] `Book` tipi: id, başlık, yazar, seviye, kaynak, lisans, paragraflara bölünmüş bölümler
 - [ ] 2–3 örnek kitap ekle
 - [ ] Kitaplar ekranı: seviye rozetleri ve seviyeye göre filtre
 - [ ] Okuyucu: metni paragraf paragraf `FlatList` ile göster, kelimeleri iç içe `<Text onPress>` olarak yaz
