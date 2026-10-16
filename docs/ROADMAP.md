@@ -62,10 +62,12 @@ _Öğrenilenler:_ dosya tabanlı yönlendirme, layout'lar, dinamik route.
 ### Faz 1: Kütüphane ve okuyucu
 
 - [x] `Book` tipi: id, başlık, yazar, seviye, kaynak, lisans, paragraflara bölünmüş bölümler
-- [ ] 2–3 örnek kitap ekle
-- [ ] Kitaplar ekranı: seviye rozetleri ve seviyeye göre filtre
-- [ ] Okuyucu: metni paragraf paragraf `FlatList` ile göster, kelimeleri iç içe `<Text onPress>` olarak yaz
-- [ ] Dokunulan kelime vurgulanır ve alttan bir panel açılır
+- [x] İlk örnek kitap (`fox-and-grapes`)
+- [ ] İkinci kitabı ekle, Kitaplar ekranı gerçek kitapları göstersin (başlık, yazar, seviye rozeti)
+- [ ] Seviyeye göre filtre
+- [ ] Okuyucu: metni paragraf paragraf `FlatList` ile göster
+- [ ] Kelimeler dokunulabilir olsun (iç içe `<Text onPress>`), seçilen kelime vurgulansın
+- [ ] Alttan açılan kelime paneli
 - [ ] Son okunan yeri hatırla
 
 _Öğrenilecekler:_ `FlatList`, metni kelimelere bölme (regex), dokunma olayları, stil.
